@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login </title>
+    </head>
+    <style type="text/css">
+    .form {
+        width: 500px;
+        height: 500px;
+        border: 1px solid blue;
+        margin: 0 auto;
+        padding: 120px;
+        box-sizing: border-box;
+    }
+    #data {
+      width: 500px;
+        height: 500px;
+        border: 2px solid red;
+        margin: 0 auto;
+        padding: 150px;
+        box-sizing: border-box;
+        
+    }
+    
+    </style>
+    <body>
+       <center> <h1>welcome to login page</h1></center>
+      <hr>
+      <div id="myForm" class="form">
+        
+      name:<br>
+      <input type="text" name="text" id="nam" onkeydown="showHideEmail()" >
+      
+      <br><br>
+      <div id="emailContainer" style="display: none;">
+      email:<br>
+      <input type="email" name="email" id="mail" onkeydown="showHideNumber()">
+    </div>
+      <br><br>
+      <div id="mobileContainer" style="display: none;">
+      mobile:<br>
+      <input type="number" name="number" id="numbr" >
+      </div>
+      <br><br>
+      
+      <input type="submit" id="btn" name="submit" onclick="submit_value()">
+      
+
+    </div> 
+      <div id="data" style="display: none;">
+        name:<span id="showname" ></span><br><br><br>
+        email:<span id="showemail"></span><br><br><br>
+        mobile:<span id="shownumber"></span>
+      </div>
+      <!--JavaScript-->
+      <script type="text/javascript">
+      function showHideEmail(){
+          var name=document.getElementById('nam').value;
+          if(name.length>0)
+          document.getElementById('emailContainer').style.display="block";
+          else
+          document.getElementById('emailContainer').style.display="none";
+      }
+      function showHideNumber(){
+          var email=document.getElementById('mail').value;
+          if(email.length>0)
+          document.getElementById('mobileContainer').style.display="block";
+          else
+          document.getElementById('mobileContainer').style.display="none";
+      }
+      function submit_value(){
+        var name=document.getElementById('nam').value;
+        var email=document.getElementById('mail').value;
+        var mobile=document.getElementById('numbr').value;
+        if(name.length>0 && email.length>0 && mobile.length>0){
+          document.getElementById('myForm').style.display="none";
+          document.getElementById('data').style.display="block";
+        document.getElementById('showname').innerText=name;
+        document.getElementById('showemail').innerText=email;
+        document.getElementById('shownumber').innerText=mobile;
+        }
+      }
+     
+      
+      
+      
+      
+      
+
+      
+         
+    </script>
+    </body>
+</html>
